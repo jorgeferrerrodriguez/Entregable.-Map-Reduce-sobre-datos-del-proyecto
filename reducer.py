@@ -1,32 +1,32 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
-import sys
-
-provincia2count = {}
-altura2average = {}
-
-for line in sys.stdin:
-    # remove leading and trailing whitespace
-    line = line.strip()
-    # parse the input we got from mapper.py
-    municipio, altura, provincia, count = line.split('\t')
-
-    # convert 
-    try:
-        count = int(count)
-        altura = int(altura)
-    except ValueError:
-        continue
-    try:
-        provincia2count[provincia] += count
-        altura2average[provincia]  += altura
-    except:
-        provincia2count[provincia] = count
-        altura2average[provincia]  = altura
-    
-# write the tuples to stdout
-# Note: they are unsorted
-
-for provincia in provincia2count.keys():
-    altura2average[provincia] /= provincia2count[provincia]
-    print(f"{provincia}\t{provincia2count[provincia]}\t{altura2average[provincia]}")
+import sys                                                                                                                         
+from collections import defaultdict                                                                                                
+                                                                                                                                   
+provincia2count = defaultdict(int)                                                                                                 
+altura2average = defaultdict(int)                                                                                                  
+                                                                                                                                   
+for line in sys.stdin:                                                                                                             
+    # remove leading and trailing whitespace                                                                                       
+    line = line.strip()                                                                                                            
+    # parse the input we got from mapper.py                                                                                        
+    provincia, altura = line.split('\t')                                                                                           
+                                                                                                                                   
+    # convert                                                                                                                      
+    try:                                                                                                                           
+        altura = int(altura)                                                                                                       
+    except ValueError:                                                                                                             
+        continue                                                                                                                   
+    try:                                                                                                                           
+        altura2average[provincia] += altura                                                                                        
+    except:                                                                                                                        
+        altura2average[provincia] = altura                                                                                         
+                                                                                                                                   
+    provincia2count[provincia] += 1                                                                                                
+                                                                                                                                   
+# write the tuples to stdout                                                                                                       
+# Note: they are unsorted                                                                                                          
+                                                                                                                                   
+for provincia in provincia2count.keys():                                                                                           
+    altura2average[provincia] /= provincia2count[provincia]                                                                        
+    print(provincia + '\t' + str(provincia2count[provincia]) + '\t' + str(altura2average[provincia]))
