@@ -1,5 +1,5 @@
 En el caso del reducer, gestionamos el par de claves que necesitamos para hacer el conteo y la media de altura.
 
-Leemos la entrada estándar línea por línea y seleccionamos provincia y altura. A continuación utilizamos dos acumuladores para ir haciendo el conteo de las estacions y sumar todas las alturas de las mismas.
+Leemos la entrada estándar línea por línea y seleccionamos provincia y altura. A continuación utilizamos dos acumuladores para ir haciendo el conteo de las estaciones y sumar todas las alturas de las mismas.
 
-Finalmente por cada provincia, calculamos la media de altura y posteriormente imprimimos los datos.
+Finalmente, por cada provincia, calculamos la media de altura y posteriormente imprimimos los datos.

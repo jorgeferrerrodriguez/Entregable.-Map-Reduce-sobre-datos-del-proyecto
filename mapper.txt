@@ -1,5 +1,5 @@
-En la clase del Mapper, lo que se realiza es una transformación de los datos de entrada que se dispone, el archivo estaciones.csv, para preparar la información que posteriormente irá a la clase Reducer.
+En la clase del Mapper, lo que se realiza es una transformación de los datos de entrada de los que se dispone, el archivo estaciones.csv, para preparar la información que posteriormente irá a la clase Reducer.
 
-El objetivo en este caso, es realizar un conteo de las estacions que hay en cada provincia y tambień saber su altitud media.
+El objetivo, en este caso, es realizar un conteo de las estaciones que hay en cada provincia y tambień saber, su altitud media.
 
-Con la ayuda del modulo csv realizamos la lectura de la entrada para posteriormente para cada línea, recoger los campos provincia y altura. Seguidamente generamos el par provincia y altura que utilizará la clase Reducer.
+Con la ayuda del módulo csv realizamos la lectura de la entrada para, posteriormente, para cada línea, recoger los campos provincia y altura. Seguidamente, generamos el par provincia y altura que utilizará la clase Reducer.
